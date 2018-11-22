@@ -1,0 +1,20 @@
+/* PHASE 3: Layout */
+.content {
+  display: flex;
+  min-height: 200px;
+  margin: 0px 100px 100px 100px;
+  background-color: white;
+  max-height: 100%
+}
+
+.content-sidebar {
+  padding: 10px;
+  border: 1px solid grey;
+  flex-grow: 1;
+}
+
+.content-main {
+  padding: 10px;
+  border: 1px solid grey;
+  flex-grow: 2;
+}
