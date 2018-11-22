@@ -14,10 +14,34 @@ Array.prototype.bubbleSort = function() {
           arr[j] = val;
           sorted = false;
         }
-        j++
+        j++;
       }
-      i++
+      i++;
     }
   }
   return arr;
 };
+
+String.prototype.substrings = function() {
+  let result = [];
+  this.split("").forEach((el1, idx1) => {
+    let currentel = el1;
+    result.push(el1);
+    this.split("").forEach((el2, idx2) => {
+      if(idx2 > idx1) {
+        currentel += el2;
+        result.push(currentel);
+      }
+    });
+  });
+  return result;
+};
+
+
+
+
+
+
+
+
+
