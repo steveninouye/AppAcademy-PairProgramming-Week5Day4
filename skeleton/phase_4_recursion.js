@@ -58,7 +58,6 @@ function bsearch(arr, target) {
   }
   let middle = Math.floor(arr.length / 2);
   let el = arr[middle];
-  
   if (el === target) {
     return middle;
   } else if (el < target) {
@@ -72,3 +71,32 @@ function bsearch(arr, target) {
     return bsearch(arr.slice(0, middle), target);
   }
 }
+
+function mergesort(arr) {
+  if(arr.length <= 1){
+    return arr;
+  }
+  let middle = Math.floor(arr.length / 2);
+  let left = mergesort(arr.slice(0,middle));
+  let right = mergesort(arr.slice(middle));
+  return merge(left, right);
+}
+
+function merge(leftArr, rightArr){
+  let result = [];
+  while (!(leftArr.length === 0) && !(rightArr.length === 0)) {
+    if(leftArr[0] < rightArr[0]){
+      result.push(leftArr.shift());
+    } else {
+      result.push(rightArr.shift());
+    }
+  }
+  return result.concat(leftArr).concat(rightArr);
+}
+
+
+
+
+
+
+///
